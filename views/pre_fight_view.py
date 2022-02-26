@@ -3,6 +3,7 @@ from tkinter.ttk import LabelFrame
 from config.config import Config
 from PIL import Image, ImageTk
 from data.pymon_local_repository import PymonLocalRepository
+from data.users_csv_repository import UsersCSVRepository
 from domain.user import User
 
 from views.blank_view import BlankView
@@ -13,6 +14,7 @@ class PreFightView(BlankView):
     def __init__(self, is_history=True) -> None:
         super().__init__()
         self.pymonRepository = PymonLocalRepository()
+        self.usersRepository = UsersCSVRepository()
         Im1 = Image.open(Config.projectPath+"assets/"+"aquarder.png")
         Im2 = Image.open(Config.projectPath+"assets/"+"electder.png")
         Im3 = Image.open(Config.projectPath+"assets/"+"Firesor.png")
